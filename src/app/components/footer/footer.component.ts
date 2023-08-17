@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {faDiscord} from "@fortawesome/free-brands-svg-icons";
+import {faMailBulk, faX} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +9,7 @@ import {Component} from '@angular/core';
 })
 export class FooterComponent {
 
+  discordLogo = faDiscord;
+  twitterLogo = faX;
+  mailLogo = faMailBulk;
 }
