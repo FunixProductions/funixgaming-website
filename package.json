@@ -1,6 +1,6 @@
 {
   "name": "funixgaming-website",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,7 @@
     "build:ssr": "ng build && ng run funixgaming-website:server",
     "prerender": "ng run funixgaming-website:prerender"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^16.2.1",
     "@angular/common": "^16.2.1",
