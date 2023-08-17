@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">FunixGaming</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +18,15 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+      <div class="d-flex funix-links">
+        <a class="p-1" target="_blank" href="https://twitch.tv/funixgaming"><fa-icon [icon]="twitchLogo"></fa-icon></a>
+        <a class="p-1" target="_blank" href="https://youtube.com/c/funixgaming"><fa-icon [icon]="youtubeLogo"></fa-icon></a>
+        <a class="p-1" target="_blank" href="https://x.com/funixgaming"><fa-icon [icon]="twitterLogo"></fa-icon></a>
+        <a class="p-1" target="_blank" href="https://instagram.com/funixgaming_"><fa-icon [icon]="instagramLogo"></fa-icon></a>
+        <a class="p-1" target="_blank" href="https://discord.gg/0u58pdR1VzgnH5ZY"><fa-icon [icon]="discordLogo"></fa-icon></a>
+        <a class="p-1" target="_blank" href="https://tiktok.com/@_funix"><fa-icon [icon]="tiktokLogo"></fa-icon></a>
+      </div>
     </div>
   </div>
 </nav>
