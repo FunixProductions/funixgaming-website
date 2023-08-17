@@ -23,7 +23,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push pacifista-website pterodactyl dockerfile
+      - name: Build and push funixgaming-website dockerfile
         run: |
           docker build . --tag ghcr.io/funixproductions/funixgaming-website:latest
           docker push ghcr.io/funixproductions/funixgaming-website:latest
