@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: funixgaming-website-deployment
+  namespace: 'funixproductions'
+  labels:
+    app: angular
+    service: funixgaming-web
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: angular
+      service: funixgaming-web
+  template:
+    metadata:
+      namespace: 'funixproductions'
+      annotations:
+        build-time: "TIME-UPDATE-BUILD-FNG"
+      labels:
+        app: angular
+        service: funixgaming-web
+    spec:
+      containers:
+        - name: angular-funixgaming-web
+          image: ghcr.io/funixproductions/funixgaming-website:latest
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "700Mi"
+          imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  namespace: 'funixproductions'
+  name: funixgaming-web
+
+spec:
+  type: ClusterIP
+  selector:
+    app: angular
+    service: funixgaming-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

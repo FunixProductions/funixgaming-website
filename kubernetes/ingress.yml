@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: 'funixproductions'
+  name: funixgaming-website-ingress
+  annotations:
+    spec.ingressClassName: traefik
+spec:
+  tls:
+    - secretName: funixgaming-website-certificate-tls
+  rules:
+    - host: funixgaming.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: funixgaming-web
+                port:
+                  number: 80
