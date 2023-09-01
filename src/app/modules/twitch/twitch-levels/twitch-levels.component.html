@@ -1,0 +1,14 @@
+<div class="container pt-3">
+  <h1>Top 100 des viewers</h1>
+  <p>Le "TOP 100 du chat de FunixGaming en expérience gagnée" représente le classement des 100 spectateurs les plus engagés
+    sur la chaîne Twitch en termes d'expérience accumulée. Les viewers peuvent gagner de l'expérience en participant activement
+    dans le chat en ligne ou simplement en regardant le stream. Ainsi, les 100 personnes figurant dans ce classement sont
+    les viewers qui ont donné le plus de force à la chaine, démontrant ainsi leur engagement et leur soutien continu.</p>
+
+  <div class="p-4">
+    <div class="p-2" *ngFor="let viewer of viewers; let i = index">
+      <app-twitch-level-user [userExp]="viewer" [userExpIndex]="i"></app-twitch-level-user>
+    </div>
+  </div>
+
+</div>
