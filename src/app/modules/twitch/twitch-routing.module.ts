@@ -1,11 +1,12 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {ClassementComponent} from './components/classement/classement.component';
+import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from "@angular/router";
+import {TwitchLevelsComponent} from "./twitch-levels/twitch-levels.component";
 
 const routes: Routes = [
-  {
-    path: 'classement', component: ClassementComponent
-  }
+  { path: '', children: [
+      { path: 'levels', component: TwitchLevelsComponent },
+    ]
+  },
 ];
 
 @NgModule({

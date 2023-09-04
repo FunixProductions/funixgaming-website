@@ -1,0 +1,24 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div *ngIf="userExpIndex < 4" class="col-md-2">
+      <img src="{{ getImageRanking() }}" class="img-fluid rounded-start" alt="Image de classement pour {{ userExp.twitchUsername }} au classement funixgaming twitch chat. Classement numéro {{ userExpIndex }}">
+    </div>
+    <div class="col-md-{{ userExpIndex < 4 ? '10' : '12' }}">
+      <div class="card-body">
+        <h4>#{{ userExpIndex }}</h4>
+        <h5 class="card-title">{{ userExp.twitchUsername }}</h5>
+
+        <div class="row">
+          <div class="col-md-4">
+            Niveau {{ userExp.level }}
+          </div>
+
+          <div class="col-md-4">
+            {{ userExp.xp }} / {{ userExp.xpNextLevel }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

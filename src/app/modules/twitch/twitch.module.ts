@@ -1,15 +1,13 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-
-import {TwitchRoutingModule} from './twitch-routing.module';
-import {ClassementComponent} from './components/classement/classement.component';
-import { UserExpCardComponent } from './components/user-exp-card/user-exp-card.component';
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {TwitchRoutingModule} from "./twitch-routing.module";
+import { TwitchLevelsComponent } from './twitch-levels/twitch-levels.component';
+import { TwitchLevelUserComponent } from './twitch-levels/twitch-level-user/twitch-level-user.component';
 
 @NgModule({
   declarations: [
-    ClassementComponent,
-    UserExpCardComponent
+    TwitchLevelsComponent,
+    TwitchLevelUserComponent
   ],
   imports: [
     CommonModule,
