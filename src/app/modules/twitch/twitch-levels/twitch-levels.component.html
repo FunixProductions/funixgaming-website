@@ -7,7 +7,7 @@
 
   <div class="p-4">
     <div class="p-2" *ngFor="let viewer of viewers; let i = index">
-      <app-twitch-level-user [userExp]="viewer" [userExpIndex]="i"></app-twitch-level-user>
+      <app-twitch-level-user [userExp]="viewer" [userExpIndex]="i + 1"></app-twitch-level-user>
     </div>
   </div>
 

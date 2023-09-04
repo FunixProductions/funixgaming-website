@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, Inject, PLATFORM_ID} from '@angular/core';
 import {
   FunixbotUserExpCrudService,
   FunixbotUserExpDto,
@@ -6,6 +6,7 @@ import {
   QueryBuilder
 } from "@funixproductions/funixproductions-requests";
 import {HttpClient} from "@angular/common/http";
+import {isPlatformBrowser} from "@angular/common";
 import {environment} from "../../../../environments/environment";
 
 @Component({
@@ -18,11 +19,14 @@ export class TwitchLevelsComponent implements AfterViewInit {
   private readonly funixbotLevelsService: FunixbotUserExpCrudService;
   viewers: FunixbotUserExpDto[] = [];
 
-  constructor(httpClient: HttpClient) {
+  constructor(httpClient: HttpClient,
+              @Inject(PLATFORM_ID) private platformId: Object) {
     this.funixbotLevelsService = new FunixbotUserExpCrudService(httpClient, environment.production);
   }
 
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const pageOption: PageOption = new PageOption();
     pageOption.elemsPerPage = 100;
     pageOption.page = 0;
